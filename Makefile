@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.54 2022/10/26 10:31:39 wiz Exp $
+# $NetBSD: Makefile,v 1.58 2023/11/08 13:19:59 wiz Exp $
 
 DISTNAME=		nullmailer-2.2
-PKGREVISION=		7
+PKGREVISION=		10
 CATEGORIES=		mail
 MASTER_SITES=		${HOMEPAGE:Q}
 
@@ -15,7 +15,7 @@ LICENSE=		gnu-gpl-v2
 DEPENDS+=		daemontools-[0-9]*:../../sysutils/daemontools
 .endif
 
-USE_LANGUAGES=		c c++03
+USE_LANGUAGES=		c c++
 USE_TOOLS+=		gmake
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFDIR}
@@ -25,6 +25,9 @@ CONFIGURE_ARGS+=	--sbindir=${PREFIX}/libexec/nullmailer
 
 TEST_TARGET=		check
 USE_TOOLS+=		bash
+
+# Fails with C++14 default language.
+FORCE_CXX_STD=		c++03
 
 .include "../../mk/bsd.prefs.mk"
 
