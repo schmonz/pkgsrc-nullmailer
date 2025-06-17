@@ -1,5 +1,5 @@
-===========================================================================
-$NetBSD: MESSAGE,v 1.5 2005/08/20 02:20:45 schmonz Exp $
+ Getting started
+ ===============
 
 To use nullmailer, you will need to perform the following steps:
 
@@ -32,4 +32,3 @@ To use nullmailer, you will need to perform the following steps:
    files.  This will depend on your local setup.  See the
    nullmailer(7), nullmailer-queue(8), and nullmailer-send(8) manual
    pages for details.
-===========================================================================
